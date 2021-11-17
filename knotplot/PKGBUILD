@@ -1,0 +1,30 @@
+# Maintainer: erooke
+
+pkgname=knotplot-bin
+pkgver=1.0
+pkgrel=1
+pkgdesc="The World's most elaborate knotting software"
+arch=('x86_64')
+url="https://knotplot.com"
+license=('proprietary')
+depends=("freeglut" "glu")
+makedepends=()
+optdepends=("php: some demos use php" "tcsh: some demos use tcsh/csh")
+provides=('knotplot')
+conflicts=('knotplot')
+options=()
+source=("patch" "https://knotplot.com/download/Linux-Ubuntu/knotplot.gz" "https://knotplot.com/download/distribution/kpdist.tar.gz" )
+md5sums=('SKIP' '263065d1abc5ef294a96aecdb9397ef4' '7b6e1f1542bd596ee9f9c12aabad0e6c')
+
+prepare(){
+  cd "$srcdir"
+  patch -ruN < "patch"
+}
+
+package() {
+  install -Dm755 "knotplot" "${pkgdir}/usr/bin/knotplot"
+  while read f;
+  do
+    install -Dm755 "${f}" "${pkgdir}/usr/share/knotplot/${f}"
+  done < FileList.txt
+}
