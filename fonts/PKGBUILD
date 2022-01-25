@@ -1,0 +1,16 @@
+pkgname=butterick-fonts
+pkgver=01.00.00
+pkgrel=1
+pkgdesc='Valkyrie, Triplicate, Concourse, Advocate'
+arch=('x86_64')
+url='https://practicaltypography.com/mb-fonts.html'
+license=('proprietary')
+source=('fonts.zip')
+sha256sums=( '4fdd8b1157e6c6a0a9283faf6eebd1826245668d2732a9d09cf409f81e1afff6')
+
+package() {
+  find "Valkyrie + Concourse + Triplicate + Advocate 210421/TTF font files (best for Windows)/" \
+    -name "*.ttf" \
+    -printf "\"%p\" " \
+    | xargs install -Dm644 -t "$pkgdir/usr/share/fonts/TTF"
+}
