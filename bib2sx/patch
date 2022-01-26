@@ -1,0 +1,15 @@
+--- bib2sx/Makefile	2022-01-25 22:22:24.540104983 -0600
++++ bib2sx/Makefile.new	2022-01-25 22:22:41.616498916 -0600
+@@ -1,10 +1,10 @@
+-INSTALLDIR=~/bin/
++INSTALLDIR=$(DESTDIR)/usr/bin
+ 
+ bib2sx: bib2sx.rkt bibtex/*.rkt
+ 	raco exe bib2sx.rkt
+ 
+ install: bib2sx
+-	cp bib2sx $(INSTALLDIR)
++	install -D bib2sx $(INSTALLDIR)/bib2sx
+ 
+ clean:
+ 	rm -fv bib2sx
