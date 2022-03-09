@@ -1,0 +1,15 @@
+pkgname=bungee
+pkgver=1.1.0
+pkgrel=1
+pkgdesc='A chromatic signage typeface for vertical and horizontal setting.'
+arch=('x86_64')
+url='https://practicaltypography.com/mb-fonts.html'
+license=('OFL-1.1')
+source=("https://github.com/djrrb/Bungee/releases/download/${pkgver}/Bungee-fonts.zip")
+sha256sums=('d012a9e6293201c3165feba64342d29c42bb4e67b1cc66e07509c12bab760a6f' )
+
+package(){
+  find "fonts" \
+    -name "*.otf" \
+    -exec install -Dm644 -t "$pkgdir/usr/share/fonts/OTF/" {} +
+}
