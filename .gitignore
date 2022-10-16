@@ -2,3 +2,8 @@
 src/
 *.zst
 pkg/
+
+# AUR packages
+
+herbstluftwm-git
+yay
