@@ -6,7 +6,7 @@ arch=('x86_64')
 url='https://practicaltypography.com/mb-fonts.html'
 license=('proprietary')
 source=('fonts.zip')
-sha256sums=( '4fdd8b1157e6c6a0a9283faf6eebd1826245668d2732a9d09cf409f81e1afff6')
+sha256sums=('8691be6e3253a99c55df234dc926529364d023c3229bc7e9f196d121b2bdc44b')
 
 package() {
   find "Valkyrie + Concourse + Triplicate + Advocate 210421/TTF font files (best for Windows)/" \
