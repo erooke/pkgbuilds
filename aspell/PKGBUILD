@@ -1,5 +1,5 @@
 pkgname=aspell-tex-git
-pkgver=0.60.8.20190921.r38.gb978a1f
+pkgver=0.60.8.20190921.r41.g328f497
 pkgrel=1
 pkgdesc="Free and Open Source spell checker"
 arch=('i686' 'x86_64')
