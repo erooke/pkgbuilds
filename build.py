@@ -15,7 +15,7 @@ def build_pkg(directory):
         os.chdir(directory)
 
         # Update the version
-        check_call(["makepkg", "--nobuild"])
+        check_call(["makepkg", "--nobuild", "-s"])
 
         proc = run(
             ["makepkg", "--packagelist"],
