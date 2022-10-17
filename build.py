@@ -82,7 +82,7 @@ def sync_pkgs():
 def download_aur():
     packages = Path("aur").read_text(encoding="utf-8").split()
     git_ignore(packages)
-    check_call(["yay", "-Gf"] + packages)
+    check_call(["yay", "-Gfa"] + packages)
 
 
 def git_ignore(packages):
