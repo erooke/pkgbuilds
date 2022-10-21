@@ -1,0 +1,18 @@
+pkgname=kind2-bin
+_pkgname=kind2
+pkgver=v1.6.0
+pkgrel=1
+pkgdesc="SMT-based automatic model checker for safety properties of Lustre programs"
+arch=('x86_64')
+url="https://kind.cs.uiowa.edu/"
+license=('Apache')
+depends=('z3')
+provides=('kind2')
+source=("https://github.com/kind2-mc/kind2/releases/download/v1.6.0/kind2-v1.6.0-linux-x86_64.tar.gz")
+sha256sums=('29a4f77dd8b684e7163b29df0fbe0ad5287d7503e38ea76e2e44e18ca6872e91')
+
+
+package() {
+  mkdir -p "$pkgdir/usr/bin/"
+  install "$_pkgname" "$pkgdir/usr/bin/"
+}

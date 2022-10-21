@@ -1,6 +1,7 @@
 *.zip
 src/
 *.zst
+*.tar.gz
 pkg/
 
 # AUR packages
