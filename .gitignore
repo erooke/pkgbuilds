@@ -5,7 +5,6 @@ src/
 pkg/
 
 # AUR packages
-
 herbstluftwm-git
 yay
 nsxiv

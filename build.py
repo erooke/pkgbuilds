@@ -86,7 +86,12 @@ def download_aur():
 
 
 def git_ignore(packages):
-    content = ["*.zip", "src/", "*.zst", "pkg/", "\n# AUR packages\n"] + list(packages)
+    sep = "# AUR packages"
+
+    with open(".gitignore", "r") as f:
+        prefix, _, _ = f.read().partition(sep)
+
+    content = [prefix[:-1], sep] + list(packages)
 
     (Path.cwd() / ".gitignore").write_text("\n".join(content), encoding="utf-8")
 
