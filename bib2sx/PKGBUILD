@@ -7,6 +7,7 @@ arch=('i686' 'x86_64')
 url="https://matt.might.net/articles/parsing-bibtex/"
 license=('GPL3')
 makedepends=('racket' 'git')
+depends=('racket')
 provides=('bib2sx')
 source=("patch" "git+https://github.com/mattmight/bib2sx")
 sha256sums=('SKIP' 'SKIP')
